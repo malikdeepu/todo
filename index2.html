@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div style="font-weight: 900; font-size: 50px; color: aliceblue">
+      TO-DO LIST
+    </div>
+    <div id="todoList"></div>
+
+    <script>
+      fetch("http://localhost:3000/getlist")
+        .then((response) => response.json())
+        .then((data) => {
+          const todoList = document.getElementById("todoList");
+          data.forEach((todo) => {
+            const divlist = document.createElement("divlist");
+
+            divlist.innerHTML = `<span class="todo-title">Title: ${todo.title}</span> <span class="todo-description">Description: ${todo.description}</span>`;
+            todoList.appendChild(divlist);
+          });
+        })
+        .catch((error) => console.error("Error:", error));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Todo App</h1>
+
+    <form id="todoForm">
+      <label for="title" id="title-main">Title:</label><br />
+      <input type="text" id="title" name="title" required /><br />
+      <label for="description" id="description-main">Description:</label><br />
+      <textarea id="description" name="description" required></textarea
+      ><br /><br />
+      <button type="submit" id="btn">Add Todo</button>
+      <button id="btn1">
+        <a
+          href="index2.html"
+          style="
+            font-size: 20px;
+
+            text-decoration: none;
+            padding: 5px;
+            padding-left: 30px;
+            padding-right: 30px;
+            background-color: aliceblue;
+            color: #010409;
+
+            border-radius: 5px;
+          "
+        >
+          list
+        </a>
+      </button>
+    </form>
+
+    <script>
+      document
+        .getElementById("todoForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var title = document.getElementById("title").value;
+          var description = document.getElementById("description").value;
+
+          fetch("http://localhost:3000/todos", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ title: title, description: description }),
+          })
+            .then((res) => res.json())
+            .then((data) => console.log(data))
+            .catch((error) => console.error("Error:", error));
+        });
+    </script>
+  </body>
+</html>

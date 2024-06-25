@@ -1,0 +1,88 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  background-color: #010409;
+}
+h1 {
+  font-size: 70px;
+  color: aliceblue;
+}
+#todoForm {
+  border: 2px solid aliceblue;
+  width: 20vw;
+  padding: 5%;
+  margin-left: 35%;
+  margin-top: 3%;
+  border-radius: 20px;
+}
+#title-main {
+  color: aliceblue;
+  font-size: 25px;
+  margin-left: -250px;
+}
+#title {
+  font-size: 25px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid aliceblue;
+  border-radius: 5px;
+  color: aliceblue;
+}
+#description-main {
+  color: aliceblue;
+  font-size: 25px;
+  margin-left: -180px;
+}
+#description {
+  color: aliceblue;
+  font-size: 25px;
+  padding: 15px;
+  border: 1px solid aliceblue;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+#btn {
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: aliceblue;
+  color: #010409;
+  border: none;
+  border-radius: 5px;
+}
+#btn1 {
+  border: none;
+}
+h2 {
+  font-size: 20px;
+  color: aliceblue;
+  margin-right: 300px;
+  margin-top: 20px;
+}
+
+#todoList {
+  border: 2px solid aliceblue;
+  margin: 5px;
+  border-collapse: collapse;
+}
+div divlist {
+  margin-bottom: 10px;
+  border: 1px solid aliceblue;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.todo-title {
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.todo-description {
+  color: aliceblue;
+  overflow-wrap: break-word;
+}
